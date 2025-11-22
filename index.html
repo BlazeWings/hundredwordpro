@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI英语学习中心 - 四级专项</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1>📚 AI英语学习中心</h1>
+            <div class="user-info">
+                <span id="userLevel">四级考生</span>
+                <button id="notificationBtn" class="icon-btn">🔔 <span id="badge">0</span></button>
+            </div>
+        </header>
+
+        <!-- 进度卡片 -->
+        <div class="progress-card">
+            <h3>今日学习进度</h3>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <p><span id="learnedCount">0</span> / <span id="dailyGoal">30</span> 个单词</p>
+        </div>
+
+        <!-- 主要学习区域 -->
+        <main class="main-content">
+            <!-- 单词卡片 -->
+            <div id="wordCard" class="word-card">
+                <div class="word-header">
+                    <h2 id="currentWord">Welcome</h2>
+                    <button id="pronounceBtn" class="icon-btn">🔊</button>
+                </div>
+                <p id="phonetic" class="phonetic">[ˈwelkəm]</p>
+                <p id="translation" class="translation">欢迎</p>
+                <div id="example" class="example">
+                    <p>Welcome to our website!</p>
+                    <p>欢迎来到我们的网站！</p>
+                </div>
+                
+                <div class="difficulty-stars">
+                    <span>难度：</span>
+                    <span id="difficultyStars">⭐⭐⭐</span>
+                </div>
+
+                <div class="word-actions">
+                    <button id="easyBtn" class="btn btn-success">简单 😊</button>
+                    <button id="hardBtn" class="btn btn-warning">困难 🤔</button>
+                    <button id="aiChatBtn" class="btn btn-primary">AI对话 💬</button>
+                </div>
+            </div>
+
+            <!-- AI对话区域 -->
+            <div id="chatArea" class="chat-area hidden">
+                <div class="chat-header">
+                    <h3>AI对话练习</h3>
+                    <button id="closeChat" class="icon-btn">✖️</button>
+                </div>
+                <div id="chatMessages" class="chat-messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="输入你的回复...">
+                    <button id="sendBtn" class="btn">发送</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- 分类选择 -->
+        <section class="categories">
+            <h3>单词分类</h3>
+            <div class="category-tags">
+                <button class="tag active" data-category="daily">日常词汇</button>
+                <button class="tag" data-category="business">商务英语</button>
+                <button class="tag" data-category="travel">旅游英语</button>
+                <button class="tag" data-category="tech">科技词汇</button>
+            </div>
+        </section>
+
+        <!-- 复习提醒 -->
+        <div id="reviewReminder" class="review-reminder hidden">
+            <p>🕐 该复习了！有 <span id="reviewCount">0</span> 个单词需要复习</p>
+            <button id="startReview" class="btn btn-primary">开始复习</button>
+        </div>
+    </div>
+
+    <!-- 音频元素 -->
+    <audio id="audioPlayer" hidden></audio>
+
+    <script src="data/cet4-words.js"></script>
+    <script src="js/srs.js"></script>
+    <script src="js/ai-client.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
